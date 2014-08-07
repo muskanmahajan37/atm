@@ -28,4 +28,12 @@ describe 'Account' do
       expect(Account.all).to eq []
     end
   end
+  
+  describe 'save' do
+    it 'saves an account' do
+      new_account = Account.new({:owner=>'Jim',:balance=>400})
+      new_account.save
+      expect(Account.all[0]).to eq new_account
+    end
+  end
 end

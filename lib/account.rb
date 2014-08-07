@@ -16,4 +16,8 @@ class Account
   def self.clear
     @@accounts = []
   end
+  
+  def save
+    @@accounts << self
+  end
 end
