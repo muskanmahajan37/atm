@@ -36,4 +36,12 @@ describe 'Account' do
       expect(Account.all[0]).to eq new_account
     end
   end
+  
+  describe 'deposit' do
+    it 'adds funds to account' do
+      new_account = Account.new({:owner=>'Jim',:balance=>400})
+      new_account.deposit(50)
+      expect(new_account.balance).to eq 450
+    end
+  end
 end

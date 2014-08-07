@@ -20,4 +20,8 @@ class Account
   def save
     @@accounts << self
   end
+  
+  def deposit amount
+    @balance += amount
+  end
 end
