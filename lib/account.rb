@@ -26,6 +26,10 @@ class Account
   end
   
   def withdraw amount
-    @balance -= amount
+    if amount > @balance
+      'Not enough funds to complete this transaction.'
+    else
+      @balance -= amount
+    end
   end
 end

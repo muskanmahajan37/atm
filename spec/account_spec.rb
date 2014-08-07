@@ -51,5 +51,10 @@ describe 'Account' do
       new_account.withdraw(50)
       expect(new_account.balance).to eq 350
     end
+    
+    it 'cannot take more funds than are available' do
+      new_account = Account.new({:owner=>'Jim',:balance=>400})
+      expect(new_account.withdraw(450)).to eq 'Not enough funds to complete this transaction.'
+    end
   end
 end
