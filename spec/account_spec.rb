@@ -44,4 +44,12 @@ describe 'Account' do
       expect(new_account.balance).to eq 450
     end
   end
+  
+  describe 'withdraw' do
+    it 'takes funds from an account' do
+      new_account = Account.new({:owner=>'Jim',:balance=>400})
+      new_account.withdraw(50)
+      expect(new_account.balance).to eq 350
+    end
+  end
 end
